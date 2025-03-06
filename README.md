@@ -19,14 +19,17 @@ vowels_count: integer; <!--to count the nbr of vowels in the sentence-->
 vowels : Array of charachter; <!--list of vowels-->
 chara : character; <!--current char being read-->
 
-//the body
+<!--the body-->
+
 BEGIN
-//Initialize
+
+<!--Initialize-->
+
 word_count :=0;
 char_count :=0;
 vowels_count :=0;
 vowels :=[a, e, i, u, y, o, A, E, I, O, U, Y];
-chara :=' '; //empty
+chara :=' '; <!--empty-->
 
 DO{
 read chara;
