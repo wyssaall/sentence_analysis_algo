@@ -34,15 +34,13 @@ chara :=' '; <!--empty-->
 
 DO{
 read chara;
+char_count := char_count + 1;
+
 for i from 0 to 11 do
 IF(chara ∈ vowels[i]) THEN
 vowels_count := vowels_count +1;
 ENDIF
 ENDFOR
-IF(chara ∉ vowels) THEN
-char_count := char_count + 1;
-ENDIF
-
 IF (chara = ' ') THEN
 word_count := word_count+1;
 ENDIF
