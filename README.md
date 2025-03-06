@@ -16,8 +16,9 @@ var: <!--declaration of variables-->
 word_count : integer; <!--to count the nbr of words in the sentence-->
 char_count: integer; <!--to count the nbr of characters in the sentence-->
 vowels_count: integer; <!--to count the nbr of vowels in the sentence-->
-vowels : Array of charachter; <!--list of vowels-->
+vowels : Array of charachter[12]; <!--list of vowels-->
 chara : character; <!--current char being read-->
+i : integer;
 
 <!--the body-->
 
@@ -28,23 +29,25 @@ BEGIN
 word_count :=0;
 char_count :=0;
 vowels_count :=0;
-vowels :=[a, e, i, u, y, o, A, E, I, O, U, Y];
+vowels := ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'];
 chara :=' '; <!--empty-->
 
 DO{
 read chara;
-
-IF(chara ∈ vowels) THEN
+for i from 0 to 11 do
+IF(chara ∈ vowels[i]) THEN
 vowels_count := vowels_count +1;
-ELSE
-char_count := chr_count +1;
+ENDIF
+ENDFOR
+IF(chara ∉ vowels) THEN
+char_count := char_count + 1;
 ENDIF
 
-IF (chara := ' ') THEN
+IF (chara = ' ') THEN
 word_count := word_count+1;
 ENDIF
 
-}WHILE (char != '.')
+}WHILE (char <> '.')
 
 print "word_count", word_count;
 print "char_count", char_count;
